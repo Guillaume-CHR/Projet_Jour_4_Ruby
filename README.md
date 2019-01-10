@@ -5,7 +5,8 @@ Ce répository comporte:
 		<li>Un fichier README.md</li>
 		<li>Un dossier 'lib' contenant: </li>
 			<ul>
-				<li>00_hello.rbProgramme demandant le prénom de l'utilisateur et retournant "Coucou, #{prenom}""
+				<li>00_hello.rb<br/>
+					Programme demandant le prénom de l'utilisateur et retournant "Coucou, #{prenom}""
 				</li>
 				<li>01_pyramids.rb <br/>
 					Programme créant une pyramide en losange
