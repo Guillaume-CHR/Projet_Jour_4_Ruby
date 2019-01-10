@@ -34,7 +34,6 @@ def wtf_pyramid
 		wtf_pyramid
 	else
 		puts "Voici ma pyramide de #{etages} étages:"
-
 		i=1
 		j=1
 		etages.times do |etage|
