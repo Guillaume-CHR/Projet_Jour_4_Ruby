@@ -7,6 +7,7 @@
 # 		- Affichage de la pyramide de Mario après demande utilisateur du nombre d'étages
 # 		- Affichage de la pyramide renversée après demande utilisateur du nombre d'étages
 # 		- Affichage de la pyramide inversée (losange) après demande utilisateur du nombre d'étages
+# 		- Demande de choix du type de pyramide à construire entre les 3 du dessus
 #***************************************************
 
 #***************************************************
@@ -16,7 +17,7 @@
 #***************************************************
 def half_pyramid
 	#Demande utilisateur du nombre d'étage souhaité
-	puts "Salut, bienvenue dans ma 'Moitié de Pyramide' ! Combien d'étages veux-tu ?"
+	puts "Bienvenue dans ma 'Moitié de Pyramide' ! Combien d'étages veux-tu ?"
 	print "> "
 	iStory = gets.chomp.to_i
 	puts ""
@@ -47,7 +48,7 @@ end
 #***************************************************
 def full_pyramid
 	#Demande utilisateur du nombre d'étage souhaité
-	puts "Salut, bienvenue dans ma Pyramide de Gizeh ! Combien d'étages veux-tu ?"
+	puts "Bienvenue dans ma Pyramide de Gizeh ! Combien d'étages veux-tu ?"
 	print "> "
 	etages= gets.chomp.to_i
 	puts ""
@@ -66,6 +67,7 @@ def full_pyramid
 		end
 		#On incrémente i
 		i+=1
+		#Retour à la ligne pour traiter l'étage d'après
 		puts ""
 
 	end
@@ -80,7 +82,7 @@ end
 #***************************************************
 def wtf_pyramid
 	#Demande utilisateur du nombre d'étage souhaité
-	puts "Salut, bienvenue dans ma pyramide 'Alexandrie, Alexandra' ! Combien d'étages veux-tu ? (choisis un nombre impair)"
+	puts "Bienvenue dans ma pyramide 'Alexandrie, Alexandra' ! Combien d'étages veux-tu ? (choisis un nombre impair)"
 	print "> "
 	etages= gets.chomp.to_i
 	puts ""
@@ -91,7 +93,7 @@ def wtf_pyramid
 		puts "" 
 		
 		wtf_pyramid
-		
+
 	else #Si le nombre est impair, on génère la pyramide
 		puts "Voici ma pyramide de #{etages} étages:"
 		i=1	#Numéro de l'étage descendant (partie du haut + base)
@@ -111,6 +113,7 @@ def wtf_pyramid
 				end
 				#On incrémente i
 				i+=1
+				#Retour à la ligne pour traiter l'étage d'après
 				puts ""
 			#Une fois passé à la moitié inférieure de la pyramide	
 			else
@@ -129,6 +132,7 @@ def wtf_pyramid
 				i-=1
 				#On incrémente j
 				j+=1
+				#Retour à la ligne pour traiter l'étage d'après
 				puts ""
 			end
 		end
@@ -137,5 +141,35 @@ end
 # Fin de la fonction 'wtf_pyramid'
 #....................................................
 
-# Lancement de la fonction 'wtf_pyramid'
-wtf_pyramid
+#***************************************************
+# Main Function 'perform'
+# 	>> Demande du type de pyramide à construire & appel de la fonction correspondante
+#***************************************************
+def perform 
+	#Demande à l'utilisateur de choisir un type de pyramide
+	puts "Salut, bienvenue dans mon programme de génération de pyramide."
+	puts "Entre le type de pyramide que tu veux :"
+	puts "	Tape 1 pour la moitié de pyramide (half_pyramid)"
+	puts "	Tape 2 pour la pyramide écroulée (full_pyramid)"
+	puts "	Tape 3 pour la pyramide WTF (wtf_pyramid)"
+	print "> "
+	choice = gets.chomp.to_i
+	puts ""
+
+	#Si le choix n'est pas compris dans les valeurs définies on ré-appelle la fonction 'perform'
+	if not (choice == 1 || choice == 2 || choice == 3)
+		perform
+	#Sinon on appelle la pyramide correspondante
+	elsif choice ==1 
+		half_pyramid
+	elsif choice == 2 
+		full_pyramid
+	elsif choice == 3
+		wtf_pyramid
+	end
+end
+# Fin de la fonction 'perfo'
+#....................................................
+
+# Lancement de la fonction 'perform'
+perform
