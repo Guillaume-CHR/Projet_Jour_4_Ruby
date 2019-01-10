@@ -41,9 +41,9 @@ end
 #***************************************************
 def perform 
 	first_name = ask_first_name			# Stokage du résultat de la fonction 'ask_first_name'
-	say_hello(first_name)				# Appel de la fonction 'say_hello' avec le paramètre de la fonction d'avant
+	say_hello(first_name)				# Appel de la fonction 'say_hello' avec le résultat de la fonction d'avant
 end
-# Fin de la fonction 'perfo'
+# Fin de la fonction 'perform'
 #....................................................
 
 # Lancement de la fonction 'perform'

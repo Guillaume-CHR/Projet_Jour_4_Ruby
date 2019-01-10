@@ -109,15 +109,17 @@ def average_finish_time
 		position = 0
 		i = 0
 		while position < 10
-			iNum = random
-			step = progress(iNum, position)
-			position += step
-			i+=1	# Comptage d'un lancé
+			iNum = random						# Stokage du résultat de la fonction 'random'
+			step = progress(iNum, position)		# Appel de la fonction 'progress' fonction de la position du bonhomme & de la fonction d'avant (valeur dé)
+			position += step					# On modifie la position du bonhomme en fonction de la fonction d'avant
+			i+=1								# Comptage d'un lancé
 		end
 		#On ajoute le nombre de lancé dans la table
 		table << i
 	end
+	#Calcul de la moyenne
 	average = table.sum / table.size.to_f
+	return average
 end
 # Fin de la fonction 'average_finish_time'
 #....................................................
@@ -128,8 +130,8 @@ end
 #***************************************************
 def perform
 	puts "Bienvenue au jeu de l'oie informatique"
-	puts "Ce jeu passionnant va te montrer un bonhomme monter un escalier"
-	puts "Et c'est parti ... tu pars de 0"
+	puts "Ce jeu passionnant va te montrer un bonhomme (symbolisé par '£') monter un escalier"
+	puts "Eeeeeeet c'est parti ... tu pars de 0"
 	puts ""
 
 	#Initiation de la position du bonhomme à 0
@@ -167,9 +169,11 @@ def perform
 	end
 
 	#Quand la position est 10, on affiche le message
-	puts "TU ES UN OUF - Tu es en haut de l'escalier"
+	puts "············································"
+	puts " TU ES UN·E OUF - Tu es en haut de l'escalier"
+	puts "............................................"
 
-	#Lancement du calcul des stats sur 100 parties
+	#Lancement du calcul des stats sur 100 parties grâce à la fonction 'average_finish_time'
 	average = average_finish_time
 	puts "INFO NAZE : Le nombre moyen de tours par partie est de #{average} - moyenne sur 100 parties !"
 

@@ -168,7 +168,7 @@ def perform
 		wtf_pyramid
 	end
 end
-# Fin de la fonction 'perfo'
+# Fin de la fonction 'perform'
 #....................................................
 
 # Lancement de la fonction 'perform'
