@@ -9,7 +9,7 @@ Ce répository comporte:
 					Programme demandant le prénom de l'utilisateur et retournant "Coucou, #{prenom}""
 				</li>
 				<li>01_pyramids.rb <br/>
-					Programme créant une pyramide en losange
+					Programme créant les trois types de pyramides (moitié, pleine et losange) selon le choix utilisateur"
 				</li>
      			<li>02_password.rb <br/>
 					Programme permettant de s'inscrire & se connecter à un site de la NSA
